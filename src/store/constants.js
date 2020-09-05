@@ -1,0 +1,14 @@
+export const PRE_REQUEST_URL = 'https://cors-anywhere.herokuapp.com/';
+export const REQUEST_URL = 'http://api.brewerydb.com/v2/';
+export const KEY = 'a5c1b917e7ba62dcd79f434ed73bc72d';
+export const GOOGLE_API_KEY = 'AIzaSyBirrvwwblMOLnIhOribwaSPE0JQvUyQMs';
+
+export const ON_CHANGE_FIELD = 'ON_CHANGE_FIELD';
+export const GET_BEER_DETAILS_FAILURE = 'GET_BEER_DETAILS_FAILURE';
+export const GET_BEER_DETAILS_REQUEST = 'GET_BEER_DETAILS_REQUEST';
+export const GET_BEER_DETAILS_SUCCESS = 'GET_BEER_DETAILS_SUCCESS';
+export const GET_BREWERY_DETAILS_FAILURE = 'GET_BREWERY_DETAILS_FAILURE';
+export const GET_BREWERY_DETAILS_REQUEST = 'GET_BREWERY_DETAILS_REQUEST';
+export const GET_BREWERY_DETAILS_SUCCESS = 'GET_BREWERY_DETAILS_SUCCESS';
+
+

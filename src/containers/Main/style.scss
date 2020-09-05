@@ -1,0 +1,32 @@
+.titleContainer{
+  border-radius: 4px;
+}
+.imageContainer{
+  text-align: center;
+}
+.containerWrap{
+  padding: 1%;
+  text-align: center;
+  background-color: #bfbcb1;
+}
+.center{
+  align-self: center;
+}
+.flexEnd{
+  text-align: end;
+  padding-right: 2% !important;
+}
+.noPaddingRight{
+  padding-right:0 !important;
+}
+.initial{
+  text-align: initial;
+}
+.banner{
+  height: 50px;
+  background-color: #2b262f;
+  border-bottom: 2px solid #bb870e;
+}
+.customizedBtn{
+  background-color: #2b262f;
+}
