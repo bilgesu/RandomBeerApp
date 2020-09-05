@@ -18,7 +18,6 @@ const InitialState = Record({
 const reducer = (state = new InitialState(), action) => {
     switch (action.type) {
         case ON_CHANGE_FIELD: {
-            console.log('reducer',action.payload.field,action.payload.value );
             const nextState = state.setIn([action.payload.field], action.payload.value);
             return nextState;
         }

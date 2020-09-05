@@ -21,7 +21,11 @@ export function* getBeerDetailsSaga() {
             },
         });
         if (repos.status === 'success') {
-            yield put(getBeerDetailsSuccess(repos));
+            if(repos.data.breweries && repos.data.breweries.length > 0){
+                yield put(getBeerDetailsSuccess(repos));
+            } else {
+                yield call(getBeerDetailsSaga);
+            }
         } else {
             yield put(getBeerDetailsFailure(repos.errorMessage));
         }
