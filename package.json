@@ -28,10 +28,10 @@
     "reselect": "^4.0.0"
   },
   "scripts": {
-    "start": "react start",
-    "build": "react build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "jest",
-    "eject": "react eject"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
