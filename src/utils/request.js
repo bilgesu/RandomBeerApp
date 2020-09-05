@@ -32,9 +32,6 @@ function checkStatus(response) {
     if (response.status >= 200 && response.status < 300) {
         return response;
     }
-    if (response.status === 503 || response.status === 502) {
-        window.location.href = '/maintenance';
-    }
     throw response;
 }
 /**
