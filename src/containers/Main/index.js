@@ -1,7 +1,6 @@
 
-import React, { useState} from "react";
+import React from "react";
 import './style.scss';
-import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import {Col, Modal, ModalHeader, Row} from "reactstrap";

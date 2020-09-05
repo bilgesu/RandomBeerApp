@@ -1,4 +1,4 @@
-import { call, put, takeEvery, select } from 'redux-saga/effects';
+import {call, put, takeEvery, select} from 'redux-saga/effects';
 
 import {GET_BEER_DETAILS_REQUEST, GET_BREWERY_DETAILS_REQUEST, KEY, PRE_REQUEST_URL, REQUEST_URL} from '../constants';
 import request from "../../utils/request";
@@ -20,11 +20,16 @@ export function* getBeerDetailsSaga() {
                 'Content-Type': 'application/json',
             },
         });
-        yield put(getBeerDetailsSuccess(repos));
+        if (repos.status === 'success') {
+            yield put(getBeerDetailsSuccess(repos));
+        } else {
+            yield put(getBeerDetailsFailure(repos.errorMessage));
+        }
     } catch (err) {
         yield put(getBeerDetailsFailure(err));
     }
 }
+
 export function* getBreweryDetailsSaga() {
     const breweryId = yield select(selectBreweryId());
     try {
@@ -36,12 +41,17 @@ export function* getBreweryDetailsSaga() {
                 'Content-Type': 'application/json',
             },
         });
-        yield put(getBreweryDetailsSuccess(repos));
+        if (repos.status === 'success') {
+            yield put(getBreweryDetailsSuccess(repos));
+        } else {
+            yield put(getBreweryDetailsFailure(repos.errorMessage));
+        }
     } catch (err) {
         const errorMessage = err.status + ' - ' + err.statusText;
         yield put(getBreweryDetailsFailure(errorMessage));
     }
 }
+
 export default function* saga() {
     yield takeEvery(GET_BEER_DETAILS_REQUEST, getBeerDetailsSaga);
     yield takeEvery(GET_BREWERY_DETAILS_REQUEST, getBreweryDetailsSaga);

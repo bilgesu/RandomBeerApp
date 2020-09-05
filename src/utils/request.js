@@ -1,4 +1,3 @@
-import 'whatwg-fetch';
 
 /**
  * Parses the JSON returned by a network request
@@ -20,20 +19,6 @@ function parseJSON(response) {
     }
     return response;
 }
-
-/**
- * Checks if a network request came back fine, and throws an error if not
- *
- * @param  {object} response   A response from a network request
- *
- * @return {object|undefined} Returns either the response, or throws an error
- */
-function checkStatus(response) {
-    if (response.status >= 200 && response.status < 300) {
-        return response;
-    }
-    throw response;
-}
 /**
  * Requests a URL, returning a promise
  *
@@ -48,6 +33,5 @@ export default function request(requestUrl, options = { disableEncoding: true })
         url = encodeURI(url);
     }
     return fetch(url, options)
-        .then(checkStatus)
         .then(parseJSON);
 }

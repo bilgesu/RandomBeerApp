@@ -4,7 +4,6 @@ import '../Main/style.scss'
 import LoadingOverlay from "react-loading-overlay";
 import {TextComponent} from "../../components/TextComponent";
 import {MapComponent} from "../../components/MapComponent";
-import {HeaderComponent} from "../../components/HeaderComponent";
 import {ImageComponent} from "../../components/ImageComponent";
 import * as PropTypes from "prop-types";
 import {createStructuredSelector} from "reselect";
@@ -53,13 +52,13 @@ class BreweryDetails extends React.Component {
                                         <ImageComponent
                                             width='250px'
                                             height='150px'
-                                            imageUrl={breweryDetails && breweryDetails.images && breweryDetails.images.medium || null}
+                                            imageUrl={(breweryDetails && breweryDetails.images && breweryDetails.images.medium) || null}
                                         />
                                     </Col>
                                     <Col md={8}>
                                         <TextComponent
-                                            title={breweryDetails && breweryDetails.name + ' - ' + breweryDetails.established|| null}
-                                            description={breweryDetails && breweryDetails.description || null}
+                                            title={(breweryDetails && breweryDetails.name + ' - ' + breweryDetails.established) || null}
+                                            description={(breweryDetails && breweryDetails.description) || null}
                                         />
                                         <Row>
                                             <Col md={12}><h4>Locations</h4></Col>

@@ -27,9 +27,6 @@ export class BeerDetails extends React.Component {
                         description={beerDetails && beerDetails.style ? beerDetails.style.description : 'Description is not found'}
                         linkProperties={{
                             pathname: '/breweryDetails',
-                            state: {
-                                breweryId: beerDetails && beerDetails.breweries && beerDetails.breweries[0].id || null,
-                            }
                         }}
                         linkName='Brewery Details'/>
 
