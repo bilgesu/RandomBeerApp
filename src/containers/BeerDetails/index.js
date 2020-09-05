@@ -28,7 +28,7 @@ export class BeerDetails extends React.Component {
                         linkProperties={{
                             pathname: '/breweryDetails',
                         }}
-                        linkName='Brewery Details'/>
+                        linkName={beerDetails && beerDetails.breweries[0].name}/>
 
                 </Col>
             </Row>

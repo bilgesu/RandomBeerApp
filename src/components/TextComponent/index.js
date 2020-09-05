@@ -11,8 +11,16 @@ export const TextComponent = props => {
         <div>
             <Col className='textContainerTitle'>{title}</Col>
             <Col className='textContainerDescription'>{description}</Col>
-            <Col><p>{details}</p></Col>
-            {linkProperties ? (<Col md={12} className="flexEnd noPaddingRight"><Button className="customizedBtn"><Link style={{color: '#ffffff'}} to={linkProperties}>{linkName}</Link></Button></Col>) : null}
+            <Col>
+                <p>{details}</p>
+                <Link to={linkProperties}>{linkName}</Link>
+            </Col>
+            {linkProperties ? (
+                <Col md={12} className="flexEnd noPaddingRight">
+                <Button className="customizedBtn">
+
+                </Button>
+                </Col>) : null}
         </div>
     );
 }
