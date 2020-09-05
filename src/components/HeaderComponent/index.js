@@ -11,7 +11,7 @@ export const HeaderComponent = props => {
     return(
         <Row style={style}>
             <Col md={6} className="initial">
-                <h2>{title}</h2>
+                <h2 className="titleColor">{title}</h2>
             </Col>
             {hasButton ? (<Col md={6} className="center flexEnd">
                 <Button className="customizedBtn" style={{buttonStyle}} onClick={() => handleClick()}>{buttonName}</Button>

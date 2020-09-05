@@ -58,7 +58,7 @@ class BreweryDetails extends React.Component {
                                     </Col>
                                     <Col md={8}>
                                         <TextComponent
-                                            title={breweryDetails && breweryDetails.name || null}
+                                            title={breweryDetails && breweryDetails.name + ' - ' + breweryDetails.established|| null}
                                             description={breweryDetails && breweryDetails.description || null}
                                         />
                                         <Row>
@@ -67,7 +67,6 @@ class BreweryDetails extends React.Component {
                                                 return (<Map
                                                     key={item.id}
                                                     address={item.streetAddress + ' ' + item.postalCode + ' ' + item.country.displayName}
-                                                    createDate={item.createDate}
                                                     center={{lat: item.latitude, lng: item.longitude}}
                                                 />)
                                             })}
