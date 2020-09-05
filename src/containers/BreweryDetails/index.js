@@ -3,7 +3,7 @@ import {Button, Col, Modal, ModalHeader, Row} from "reactstrap";
 import '../Main/style.scss'
 import LoadingOverlay from "react-loading-overlay";
 import {TextComponent} from "../../components/TextComponent";
-import {Map} from "../../components/Map";
+import {MapComponent} from "../../components/MapComponent";
 import {HeaderComponent} from "../../components/HeaderComponent";
 import {ImageComponent} from "../../components/ImageComponent";
 import * as PropTypes from "prop-types";
@@ -64,7 +64,7 @@ class BreweryDetails extends React.Component {
                                         <Row>
                                             <Col md={12}><h4>Locations</h4></Col>
                                             {breweryDetails && breweryDetails.locations && breweryDetails.locations.map((item) => {
-                                                return (<Map
+                                                return (<MapComponent
                                                     key={item.id}
                                                     address={item.streetAddress + ' ' + item.postalCode + ' ' + item.country.displayName}
                                                     center={{lat: item.latitude, lng: item.longitude}}

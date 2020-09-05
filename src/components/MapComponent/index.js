@@ -3,7 +3,7 @@ import {Col} from "reactstrap";
 import GoogleMapReact from 'google-map-react';
 import {GOOGLE_API_KEY} from "../../store/constants";
 
-export const Map = props => {
+export const MapComponent = props => {
     const {address, center } = props;
         return(
             <div>
