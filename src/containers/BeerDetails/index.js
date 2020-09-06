@@ -6,9 +6,6 @@ import {TextComponent} from "../../components/TextComponent";
 import {ImageComponent } from "../../components/ImageComponent";
 
 export class BeerDetails extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         const {beerDetails} = this.props;
@@ -16,7 +13,9 @@ export class BeerDetails extends React.Component {
             <Row className="containerWrap">
                 <Col md={4} className='imageContainer'>
                     <ImageComponent
-                        imageUrl={beerDetails ? beerDetails.label || null : null}
+                        imageUrl={(beerDetails && beerDetails.label) || null}
+                        height="100%"
+                        width="100%"
                     />
                 </Col>
                 <Col md={8}>

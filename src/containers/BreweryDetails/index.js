@@ -42,6 +42,7 @@ class BreweryDetails extends React.Component {
                 text='Loading details...'
                 className="wrapper"
             >
+                <Row className="banner"></Row>
                 <div className="containerWrap">
                     <Col md={8}>
 
@@ -53,8 +54,8 @@ class BreweryDetails extends React.Component {
                                 <Row className="containerWrap">
                                     <Col md={4} className='imageContainer'>
                                         <ImageComponent
-                                            width='350px'
-                                            height='150px'
+                                            width='100%'
+                                            height='100%'
                                             imageUrl={(breweryDetails && breweryDetails.images && breweryDetails.images.medium) || null}
                                         />
                                     </Col>

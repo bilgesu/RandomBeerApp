@@ -35,9 +35,12 @@ class Main extends React.Component {
                 text='Loading details...'
                 className="wrapper"
             >
+
+                <Row className="banner"></Row>
                 <div className="containerWrap">
                     <Col md={8}>
                         <Row>
+
                             <Col md={12} className='titleContainer'>
                                 <HeaderComponent
                                     title="The Random Beer App"
