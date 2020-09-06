@@ -1,3 +1,7 @@
+## Usage
+This project shows some beer details and their brewery details. Home page includes the beer description, image and brewery name. You can show another beer details using *Show Another Beer* button. You can go to the brewery details page with click brewery name on home page. The Brewery name, establish year, label, description and locations are shown in the details page. You can go back to the home page with *Back* button.
+
+
 ## Installation
 
 All the `code` required to get start
@@ -29,6 +33,4 @@ Launches the test runner in the interactive watch mode.<br />
 Builds the app for production to the `build` folder.<br />
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## Usage
-This project shows some beer details and their brewery details. Home page includes the beer description, image and brewery name. You can show another beer details using *Show Another Beer* button. You can go to the brewery details page with click brewery name on home page. The Brewery name, establish year, label, description and locations are shown in the details page. You can go back to the home page with *Back* button.
 
