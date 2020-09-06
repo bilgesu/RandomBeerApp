@@ -37,7 +37,7 @@ class BreweryDetails extends React.Component {
     render() {
         const {breweryDetails, isLoading, error} = this.props;
         const context = (
-            <Row>
+            <div>
                 <Row>
                     <Col md={12} className="initial">
                         {/* Go back previous page */}
@@ -56,12 +56,11 @@ class BreweryDetails extends React.Component {
                     <Col md={8}>
                         {/* Brewery details is shown */}
                         <TextComponent
-                            title={(breweryDetails && breweryDetails.name + ' - ' + breweryDetails.established) || null}
-                            description={(breweryDetails && breweryDetails.description) || null}
+                            title={(breweryDetails && breweryDetails.name + ' - ' + breweryDetails.established) || ''}
+                            description={(breweryDetails && breweryDetails.description) || 'Description is not found'}
                         />
                         <div>
                             {/* If brewery has locations, they are shown */}
-
                             <Col md={12} className="flexCenter"><h4>Locations</h4></Col>
                             {breweryDetails && breweryDetails.locations && breweryDetails.locations.map((item) => {
                                 return (<MapComponent
@@ -75,7 +74,7 @@ class BreweryDetails extends React.Component {
                     </Col>
                 </Row>
 
-            </Row>
+            </div>
         );
         return (
             <LayoutComponent

@@ -22,32 +22,32 @@ const reducer = (state = new InitialState(), action) => {
             return nextState;
         }
         case GET_BEER_DETAILS_FAILURE: {
-            const nextState = state.setIn(['isLoading'], action.payload.loading)
-                .setIn(['error'], {hasError: true, errorMessage: action.payload.error});
+            const nextState = state.setIn(['isLoading'], action.payload.isLoading)
+                .setIn(['error'], action.payload.error);
             return nextState;
         }
         case GET_BEER_DETAILS_REQUEST: {
-            const nextState = state.setIn(['isLoading'], action.payload.loading);
+            const nextState = state.setIn(['isLoading'], action.payload.isLoading);
             return nextState;
         }
         case GET_BEER_DETAILS_SUCCESS: {
-            const nextState = state.setIn(['isLoading'], action.payload.loading)
-                .setIn(['randomBeerDetails'], action.payload.data)
-                .setIn(['breweryId'], action.payload.data.breweries[0].id);
+            const nextState = state.setIn(['isLoading'], action.payload.isLoading)
+                .setIn(['randomBeerDetails'], action.payload.randomBeerDetails)
+                .setIn(['breweryId'], action.payload.breweryId);
             return nextState;
         }
         case GET_BREWERY_DETAILS_FAILURE: {
-            const nextState = state.setIn(['isLoading'], action.payload.loading)
-                .setIn(['error'], {hasError: true, errorMessage: action.payload.error});
+            const nextState = state.setIn(['isLoading'], action.payload.isLoading)
+                .setIn(['error'], action.payload.error);
             return nextState;
         }
         case GET_BREWERY_DETAILS_REQUEST: {
-            const nextState = state.setIn(['isLoading'], action.payload.loading);
+            const nextState = state.setIn(['isLoading'], action.payload.isLoading);
             return nextState;
         }
         case GET_BREWERY_DETAILS_SUCCESS: {
-            const nextState = state.setIn(['isLoading'], action.payload.loading)
-                .setIn(['breweryDetails'], action.payload.data);
+            const nextState = state.setIn(['isLoading'], action.payload.isLoading)
+                .setIn(['breweryDetails'], action.payload.breweryDetails);
             return nextState;
         }
         default: {

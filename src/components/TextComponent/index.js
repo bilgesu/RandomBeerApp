@@ -1,6 +1,6 @@
 import React from "react";
 import './style.scss';
-import {Button, Col} from "reactstrap";
+import {Col} from "reactstrap";
 import {Link} from "react-router-dom";
 
 

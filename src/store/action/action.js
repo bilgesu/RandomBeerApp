@@ -17,36 +17,36 @@ export function onChangeField(field, value) {
 export function getBeerDetails(id) {
     return {
         type: GET_BEER_DETAILS_REQUEST,
-        payload: { id, loading: true },
+        payload: { id, isLoading: true },
     };
 }
 export function getBeerDetailsSuccess(res) {
     return {
         type: GET_BEER_DETAILS_SUCCESS,
-        payload: { data: res.data, loading: false },
+        payload: { isLoading: false, randomBeerDetails: res.data, breweryId: res.data.breweries[0].id },
     };
 }
 export function getBeerDetailsFailure(error) {
     return {
         type: GET_BEER_DETAILS_FAILURE,
-        payload: { loading: false, error },
+        payload: { isLoading: false, error: {hasError: true, errorMessage: error} },
     };
 }
 export function getBreweryDetails() {
     return {
         type: GET_BREWERY_DETAILS_REQUEST,
-        payload: { loading: true },
+        payload: { isLoading: true },
     };
 }
 export function getBreweryDetailsSuccess(res) {
     return {
         type: GET_BREWERY_DETAILS_SUCCESS,
-        payload: { data: res.data, loading: false },
+        payload: { breweryDetails: res.data, isLoading: false },
     };
 }
 export function getBreweryDetailsFailure(error) {
     return {
         type: GET_BREWERY_DETAILS_FAILURE,
-        payload: { loading: false, error },
+        payload: { isLoading: false, error: {hasError: true, errorMessage: error} },
     };
 }

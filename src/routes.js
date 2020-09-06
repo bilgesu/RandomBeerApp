@@ -1,4 +1,4 @@
-import React, {createContext} from 'react';
+import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import BreweryDetails from "../src/containers/BreweryDetails";
 import Main from "../src/containers/Main"
