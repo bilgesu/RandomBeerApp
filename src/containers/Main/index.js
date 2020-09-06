@@ -33,13 +33,11 @@ class Main extends React.Component {
                 active={this.props.isLoading}
                 spinner
                 text='Loading details...'
+                className="wrapper"
             >
-                <Row className="banner"></Row>
-                <Row className="containerWrap">
+                <div className="containerWrap">
                     <Col md={8}>
-
                         <Row>
-
                             <Col md={12} className='titleContainer'>
                                 <HeaderComponent
                                     title="The Random Beer App"
@@ -55,7 +53,7 @@ class Main extends React.Component {
                             />
                     </Col>
 
-                </Row>
+                </div>
                 <Modal
                 isOpen={error.hasError || false}
             >

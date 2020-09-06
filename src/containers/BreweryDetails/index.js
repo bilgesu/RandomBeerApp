@@ -28,7 +28,7 @@ class BreweryDetails extends React.Component {
         this.props.history.goBack();
     }
 
-    closeModal(){
+    closeModal() {
         this.props.onChangeField('error', {hasError: false, errorMessage: ''});
         this.props.history.goBack();
     }
@@ -40,17 +40,20 @@ class BreweryDetails extends React.Component {
                 active={isLoading}
                 spinner
                 text='Loading details...'
+                className="wrapper"
             >
-                <Row className="banner"></Row>
-                <Row className="containerWrap">
+                <div className="containerWrap">
                     <Col md={8}>
-                        <Row>
-                            <Button className="customizedBtn" onClick={() => this.handleBack()}>Back</Button>
-                            <Col md={12} className="containerWrap">
+
                                 <Row>
+                                    <Col md={12} className="initial">
+                                    <Button className="customizedBtn" onClick={() => this.handleBack()}>Back</Button>
+                                    </Col>
+                                </Row>
+                                <Row className="containerWrap">
                                     <Col md={4} className='imageContainer'>
                                         <ImageComponent
-                                            width='250px'
+                                            width='350px'
                                             height='150px'
                                             imageUrl={(breweryDetails && breweryDetails.images && breweryDetails.images.medium) || null}
                                         />
@@ -71,14 +74,10 @@ class BreweryDetails extends React.Component {
                                             })}
                                         </Row>
                                     </Col>
-                                    <Col md={12}>
-
-                                    </Col>
                                 </Row>
-                            </Col>
-                        </Row>
+
                     </Col>
-                </Row>
+                </div>
                 <Modal
                     isOpen={error.hasError || false}
                 >

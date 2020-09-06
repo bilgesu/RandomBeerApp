@@ -16,8 +16,6 @@ export class BeerDetails extends React.Component {
             <Row className="containerWrap">
                 <Col md={4} className='imageContainer'>
                     <ImageComponent
-                        width='250px'
-                        height='150px'
                         imageUrl={beerDetails ? beerDetails.label || null : null}
                     />
                 </Col>

@@ -1,12 +1,17 @@
+.wrapper{
+  height: 100%;
+  width:100%;
+}
 .titleContainer{
   border-radius: 4px;
 }
 .imageContainer{
-  text-align: center;
+  width: 350px;
+  height: 150px;
+  object-fit: contain;
 }
 .containerWrap{
   padding: 1%;
-  text-align: center;
   background-color: #EAE7DC;
 }
 .center{
