@@ -40,13 +40,13 @@ class BreweryDetails extends React.Component {
             <Row>
                 <Row>
                     <Col md={12} className="initial">
-                        /* Go back previous page */
+                        {/* Go back previous page */}
                         <Button className="customizedBtn" onClick={() => this.handleBack()}>Back</Button>
                     </Col>
                 </Row>
                 <Row className="containerWrap">
                     <Col md={4} className='imageContainer'>
-                        /* Brewery Label is shown */
+                        {/* Brewery Label is shown */}
                         <ImageComponent
                             width='100%'
                             height='100%'
@@ -54,14 +54,15 @@ class BreweryDetails extends React.Component {
                         />
                     </Col>
                     <Col md={8}>
-                        /* Brewery details is shown */
+                        {/* Brewery details is shown */}
                         <TextComponent
                             title={(breweryDetails && breweryDetails.name + ' - ' + breweryDetails.established) || null}
                             description={(breweryDetails && breweryDetails.description) || null}
                         />
-                        <Row>
-                            /* If brewery has locations, they are shown */
-                            <Col md={12} className="center"><h4>Locations</h4></Col>
+                        <div>
+                            {/* If brewery has locations, they are shown */}
+
+                            <Col md={12} className="flexCenter"><h4>Locations</h4></Col>
                             {breweryDetails && breweryDetails.locations && breweryDetails.locations.map((item) => {
                                 return (<MapComponent
                                     key={item.id}
@@ -69,7 +70,8 @@ class BreweryDetails extends React.Component {
                                     center={{lat: item.latitude, lng: item.longitude}}
                                 />)
                             })}
-                        </Row>
+
+                        </div>
                     </Col>
                 </Row>
 

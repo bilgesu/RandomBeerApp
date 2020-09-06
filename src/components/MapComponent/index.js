@@ -8,7 +8,7 @@ export const MapComponent = props => {
     const {address, center} = props;
     return (
         <Row>
-            <Col>
+            <Col md={8}>
             <Row>
                 <Col md={12} className="address">{address}</Col>
             </Row>
