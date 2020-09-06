@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 
 
 export const TextComponent = props => {
-
+    {/*It is textComponent for using description box*/}
     const {details, title, description, linkProperties, linkName} = props;
     return (
         <div>

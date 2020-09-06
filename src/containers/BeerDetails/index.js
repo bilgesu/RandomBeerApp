@@ -12,6 +12,7 @@ export class BeerDetails extends React.Component {
         return (
             <Row className="containerWrap">
                 <Col md={4} className='imageContainer'>
+                    {/* the labels of beers are shown here */}
                     <ImageComponent
                         imageUrl={(beerDetails && beerDetails.label) || null}
                         height="100%"
@@ -19,6 +20,7 @@ export class BeerDetails extends React.Component {
                     />
                 </Col>
                 <Col md={8}>
+                    {/*Beer Details are shown*/}
                     <TextComponent
                         title={beerDetails ? beerDetails.nameDisplay : ''}
                         description={beerDetails && beerDetails.style ? beerDetails.style.description : 'Description is not found'}

@@ -18,6 +18,8 @@ class Main extends React.Component {
     }
 
     componentDidMount() {
+        // If the beerDetails is null, new api call is requested
+        // Else the exist beerDetails is shown
         const {beerDetails} = this.props;
         if (beerDetails === null) {
             this.props.getBeerDetails();

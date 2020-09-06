@@ -18,6 +18,12 @@ class BreweryDetails extends React.Component {
     }
 
     componentDidMount() {
+
+        // If there is no brewery id, new api call is requested
+        // The brewery id check with previous brewery id
+        // If they are different, new api call is requested
+        // If they are the same, previous data is shown
+        // The aim is avoid to unnecessary api call
         const {breweryDetails, existBreweryId} = this.props;
         if (breweryDetails === null || existBreweryId !== breweryDetails.id) {
             this.props.getBreweryDetails();
@@ -25,11 +31,12 @@ class BreweryDetails extends React.Component {
     }
 
     handleBack() {
+        // go back to the previous page
         this.props.history.goBack();
     }
 
     closeModal() {
-        console.log('closeModal');
+        // When the modal is closed, the page go back to the previous page
         this.props.onChangeField('error', {hasError: false, errorMessage: ''});
         this.props.history.goBack();
     }

@@ -11,6 +11,8 @@ import {
 } from "../action/action";
 
 export function* getBeerDetailsSaga() {
+    // The hasLabels is used but the response doesn't include label
+    // If the label doesn't exist, default image is shown with the given default image url
     const requestURL = PRE_REQUEST_URL + REQUEST_URL + `beer/random?key=${KEY}&withBreweries=Y&hasLabels=Y`;
     try {
         const repos = yield call(request, requestURL, {
@@ -21,20 +23,25 @@ export function* getBeerDetailsSaga() {
             },
         });
         if (repos.status === 'success') {
+            // If beer has not any brewery the request is recalled until the beer has a brewery
             if(repos.data.breweries && repos.data.breweries.length > 0){
                 yield put(getBeerDetailsSuccess(repos));
             } else {
                 yield call(getBeerDetailsSaga);
             }
         } else {
+            // If the request status is not success, the error is assigned to the error state
             yield put(getBeerDetailsFailure(repos.errorMessage));
         }
     } catch (err) {
-        yield put(getBeerDetailsFailure(err));
+        // If there is an error, the message is assigned to the error state
+        yield put(getBeerDetailsFailure('There is something wrong'));
     }
 }
 
 export function* getBreweryDetailsSaga() {
+    // The withLocations attribute is used for get the exact locations
+    // The latitude and the longitude are used in MapComponent
     const breweryId = yield select(selectBreweryId());
     try {
         const requestURL = PRE_REQUEST_URL + REQUEST_URL + `/brewery/${breweryId}?key=${KEY}&withLocations=Y`;
@@ -48,11 +55,12 @@ export function* getBreweryDetailsSaga() {
         if (repos.status === 'success') {
             yield put(getBreweryDetailsSuccess(repos));
         } else {
+            // If the request status is not success, the error is assigned to the error state
             yield put(getBreweryDetailsFailure(repos.errorMessage));
         }
     } catch (err) {
-        const errorMessage = err.status + ' - ' + err.statusText;
-        yield put(getBreweryDetailsFailure(errorMessage));
+        // If there is an error, the error is assigned to the error state
+        yield put(getBreweryDetailsFailure('There is something wrong'));
     }
 }
 

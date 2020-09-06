@@ -3,8 +3,8 @@ import {Col, Modal, ModalHeader, Row} from "reactstrap";
 import React from "react";
 import '../../containers/Main/style.scss';
 export const LayoutComponent = props => {
+    {/* The Layout for pages contexts */}
     const { error, context, closeModal, isLoading} = props;
-
     return(
         <LoadingOverlay
             active={isLoading}
